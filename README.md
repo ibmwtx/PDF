@@ -68,3 +68,5 @@ b) Edit adapters.xml and add the following line (UNIX, the file is present under
 
 d) Download Apache PDFBox artifacts from [PDFBox](https://pdfbox.apache.org/download.cgi) version 1.8.x Copy pdfbox-xxx.jar to <WTX INSTALL DIR> <br>
 
+
+####Note : For any defects or usage concerns, please open an issue ticket and shall be addressed. 
