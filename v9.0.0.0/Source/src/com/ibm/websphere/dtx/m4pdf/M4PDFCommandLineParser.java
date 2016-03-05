@@ -155,68 +155,74 @@ public class M4PDFCommandLineParser
         {
             // try trace append
             traceOption = m_parser.getCommandOption("-T+");
+           
             if( traceOption != null )
             {
                 iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
                 isTraceAppend = true;
-            }
-        }
-        else
-        {
-            iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
-            isTraceAppend = false;
-        }
-
-        traceOption = m_parser.getCommandOption("-TE");
-        if( traceOption == null )
-        {
-            // try trace append
-            traceOption = m_parser.getCommandOption("-TE+");
-            if( traceOption != null )
-            {
-                iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
-                isTraceAppend = true;
-                isTraceError = true;
             }
             else
             {
-                traceOption = m_parser.getCommandOption("-TV");
-                if( traceOption == null )
+            	traceOption = m_parser.getCommandOption("-TE");
+            
+            	if( traceOption == null )
                 {
                     // try trace append
-                    traceOption = m_parser.getCommandOption("-TV+");
+                    traceOption = m_parser.getCommandOption("-TE+");
+                
                     if( traceOption != null )
                     {
                         iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
                         isTraceAppend = true;
-                        isTraceError = false;
-                        isTraceVerbatim = true;
+                        isTraceError = true;
                     }
                     else
                     {
-                    	 iTraceFile = null;
-                         isTraceAppend = false;
-                         isTraceError = false;
-                         isTraceVerbatim = true;
+                        traceOption = m_parser.getCommandOption("-TV");
+                    
+                        if( traceOption == null )
+                        {
+                            // try trace append
+                            traceOption = m_parser.getCommandOption("-TV+");
+                        
+                            if( traceOption != null )
+                            {
+                                iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
+                                isTraceAppend = true;
+                                isTraceError = false;
+                                isTraceVerbatim = true;
+                            }
+                            else
+                            {
+                            	 iTraceFile = null;
+                                 isTraceAppend = false;
+                                 isTraceError = false;
+                                 isTraceVerbatim = true;
+                            }
+                        }
+                        else
+                        {
+                        	 iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
+                             isTraceAppend = false;
+                             isTraceVerbatim = true;
+                             isTraceError = false;
+                        }
                     }
                 }
                 else
                 {
-                	 iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
-                     isTraceAppend = false;
-                     isTraceVerbatim = true;
-                     isTraceError = false;
+                    iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
+                    isTraceAppend = false;
+                    isTraceError = true;
                 }
+
             }
         }
         else
         {
             iTraceFile = traceOption.getArgument(0, m_defaultTraceFile);
             isTraceAppend = false;
-            isTraceError = true;
         }
-        
-        
 
         if( iCommonTraceSwitch == MConstants.MPI_TRACE_SWITCH_ON )
         {
