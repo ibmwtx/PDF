@@ -76,7 +76,7 @@ c) Edit adapters.xml and add the following line
 
 M4Adapter name="Abode PDF" alias="PDF" id="165" type="app" class="com/ibm/websphere/dtx/m4pdf"
 
-d) Download Apache PDFBox artifacts from [PDFBox](https://pdfbox.apache.org/download.cgi) version 1.8.x Copy pdfbox-xxx.jar to "WTX INSTALL DIR"
+d) Download Apache PDFBox artifacts from [PDFBox](https://pdfbox.apache.org/download.cgi) version 1.8.x Copy pdfbox-app-xxx.jar to "WTX INSTALL DIR"
 
 
 d) Invoke cleanextenderstudio.bat.
@@ -91,7 +91,7 @@ b) Edit adapters.xml and add the following line (UNIX, the file is present under
 M4Adapter name="Abode PDF" alias="PDF" id="165" type="app" class="com/ibm/websphere/dtx/m4pdf"
 
 
-d) Download Apache PDFBox artifacts from [PDFBox](https://pdfbox.apache.org/download.cgi) version 1.8.x Copy pdfbox-xxx.jar to "WTX INSTALL DIR" <br>
+d) Download Apache PDFBox artifacts from [PDFBox](https://pdfbox.apache.org/download.cgi) version 1.8.x Copy pdfbox-app-xxx.jar to "WTX INSTALL DIR" <br>
 
 
 ####Note : For any defects or usage concerns, please open an issue ticket and shall be addressed. 
